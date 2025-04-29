@@ -1,6 +1,6 @@
 # Red Dead Redemption 2 Characters Site
 
-🔗 [Access the site here](https://kevin-simoes.github.io/rdrsite/)
+🔗 [Access the site here](https://kevin-simoes.github.io/Games-characters/)
 
 ## 📖 About
 
@@ -32,7 +32,7 @@ The website was developed with **responsive web design** techniques to ensure:
 
 You can access it directly via GitHub Pages:
 
-👉 [https://kevin-simoes.github.io/rdrsite/](https://kevin-simoes.github.io/rdrsite/)
+👉 [https://kevin-simoes.github.io/Games-characters/](https://kevin-simoes.github.io/Games-characters/)
 
 Or, if you prefer to clone the project locally:
 
