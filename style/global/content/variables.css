@@ -1,0 +1,49 @@
+:root {
+    /* Primary Colors */
+    --color-primary: #3498db;
+    --color-primary-light: #5dade2;
+    --color-primary-dark: #2e86c1;
+  
+    /* Secondary Colors */
+    --color-secondary: #e74c3c;
+    --color-secondary-light: #ec7063;
+    --color-secondary-dark: #c0392b;
+  
+    /* Neutral Colors */
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-gray-light: #ecf0f1;
+    --color-gray: #bdc3c7;
+    --color-gray-dark: #7f8c8d;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: row;
+  }
+  
+
+  /* Text Styles */
+  h1 {
+    font-size: 2.25rem;
+    color: var(--color-primary);
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+
+    color: var(--color-secondary);
+  }
+  
+  p, a {
+    font-size: 1rem;
+    text-decoration: none;
+
+    color: var(--color-gray-dark);
+  }

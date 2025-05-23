@@ -1,0 +1,447 @@
+:root {
+  /* Cores */
+  --color-background: #000000;
+  --color-primary-text: #f9f9f9df;
+  --color-secondary-text: #cccccc;
+  --color-accent-red: #f9f9f9;
+  --color-panel-dark: #1a1a1a;
+  --color-border-light: #ffffff20;
+
+  /* Tamanhos */
+  --font-size-title: 8.5rem;
+  --font-size-subtitle: 1.5rem;
+  --font-size-body: 1rem;
+  --font-size-small: 0.875rem;
+
+  /* Espaçamento */
+  --spacing-xs: 0 0.5rem;
+  --spacing-sm: 0 1rem;
+  --spacing-md: 0 2rem;
+  --spacing-lg: 0 4rem;
+
+  /* Outros */
+  --transition-fast: 0.2s ease-in-out;
+  --transition-game: 0.3s ease-in-out;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Press Gothic';
+  src: url('../../font/novo.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'D-DIN';
+  src: url('../../font/p/D-DINCondensed.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+body {
+  background: 
+  linear-gradient(to right, rgba(0, 0, 0, 0.926) 70%, rgba(0,0,0,0) 100%),
+  url('../../img/characters/tlou-bg.jpg') no-repeat center center;
+  background-size: cover;
+  color: var(--color-primary-text);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow: scroll;
+  padding: 1rem;
+}
+
+body.parti {
+  background: 
+  linear-gradient(to right, rgba(8, 2, 0, 0.926) 70%, rgba(0,0,0,0) 100%),
+  url('../../img/characters/tlou-bg2.jpg') no-repeat center center;
+  background-size: cover;
+  
+}
+
+body.partii {
+  background: 
+  linear-gradient(to right, rgba(0, 4, 8, 0.926) 70%, rgba(0,0,0,0) 100%),
+  url('../../img/characters/tlou2-bg.jpg') no-repeat center center;
+  background-size: cover;
+}
+/* HEADER */
+header {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding: var(--spacing-sm) var(--spacing-md);
+}
+
+.logo img {
+  height: 30px;
+}
+
+.navbar {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.navbar ul {
+  list-style: none;
+  font-family: 'D-DIN', sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: #f9f9f9b4;
+  transition: color var(--transition-fast);
+}
+
+.navbar ul:hover {
+  color: var(--color-accent-red);
+  font-weight: 500;
+}
+
+.actives:hover {
+  border-bottom: 1px solid var(--color-accent-red);
+}
+
+a{
+  text-decoration: none;
+  transition: color var(--transition-fast);
+   color: #f9f9f9b4;;
+}
+
+a:hover {
+  color: var(--color-accent-red);
+  font-weight: 500;
+}
+
+header h4 {
+  font-family: 'Press Gothic', sans-serif;
+  display: flex;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 100;
+  color: var(--color-primary-text, white);
+  line-height: 0.9;
+}
+
+
+header h4 span.hover:hover {
+  color: #efffe6;
+}
+
+header h4 span.hover {
+  display: none;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+header h4:hover span.normal {
+  display: none;
+}
+
+header h4:hover span.hover {
+  display: inline;
+}
+
+/* MAIN */
+main {
+  display: flex;
+  align-items: center;
+  margin-left: 2.5rem;
+  margin-right: 50px;
+  justify-content: space-between;
+  padding: var(--spacing-lg);
+  border-left: 2px solid var(--color-border-light);
+  border-right: 2px solid var(--color-border-light);
+}
+
+.tab-content {
+  display: none;
+  width: 100%;
+}
+
+.tab-content.active {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+
+
+.divisor {
+  background-color: var(--color-primary-text);
+  width: 89%;
+  margin-top: 0rem;
+  padding: 3px 0;
+  margin-bottom: 2rem;
+}
+
+.divisor-detail {
+  background-color: var(--color-border-light);
+  padding: 0.5px;
+}
+
+
+
+
+/* LISTA DE PERSONAGENS */
+.character-nav {
+  margin-top: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 6rem;
+}
+
+.character-nav ul {
+  list-style: none;
+  color: var(--color-primary-text);
+  font-family: 'D-DIN';
+  font-size: 16px;
+  text-align: end;
+  margin-bottom: var(--spacing-xs);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.character-nav ul:hover {
+  color: var(--color-accent-red);
+}
+
+.character-link.active {
+  color: var(--color-accent-red);
+  border-bottom: 1px solid var(--color-accent-red);
+}
+
+.accounts-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.right-side {
+  display: flex;
+  margin-left: -6rem;
+  gap: 10rem;
+  flex-direction: column;
+}
+
+/* Game Container Styles */
+.game-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  max-width: 1200px;
+  padding: 1rem;
+  gap: 2rem;
+}
+
+.game-rectangle {
+  width: 333px;
+  height: 433px;
+  overflow: hidden;
+  border-radius: 15px;
+  position: relative;
+  align-content: center;
+  justify-items: center;
+  transition: transform var(--transition-game);
+}
+
+.game-rectangle img {
+  width: 344px;
+  min-height: 344px;
+    border-radius: 15px;
+  object-fit: cover;
+}
+
+.game-rectangle:hover {
+  transform: scale(1.025);
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .game-rectangle {
+      width: 180px;
+      height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .game-container {
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .game-rectangle {
+      width: 150px;
+      height: 250px;
+  }
+}
+
+/*Responsivo*/
+
+@media (max-width: 1200px) {
+  :root {
+      --font-size-title: 6.5rem;
+      --spacing-lg: 0 3rem;
+  }
+
+}
+
+@media (max-width: 992px) {
+  :root {
+      --font-size-title: 5rem;
+      --spacing-md: 0 1.5rem;
+      --spacing-lg: 0 2rem;
+  }
+
+
+
+  .character-nav {
+      display: flex;
+      flex-direction: row;
+      margin-top: 1rem;
+  }
+
+  body, body.parti, body.partii, body.dlc{
+      overflow: scroll;
+      overflow-x: hidden;
+      flex-direction: column-reverse;
+      background-attachment: fixed;
+      background-position: top center;
+  }
+
+  body.parti {
+    background: 
+    linear-gradient(to right, rgba(102, 75, 35, 0.966) 20%, rgba(0,0,0,0) 100%),
+    url('../img/characters/tlou-bg2.jpg') no-repeat center center;
+          background-attachment: fixed;
+          overflow: scroll;
+  }
+
+  body.partii {
+    background: 
+        linear-gradient(to left, rgb(0, 0, 0) 60%, rgba(0,0,0,0) 100%),
+        url('../img/characters/sadie-bg.avif') no-repeat center center;
+        background-attachment: fixed;
+        overflow: scroll;
+}
+
+body.dlc {
+  background: 
+      linear-gradient(to left, rgb(0, 0, 0) 60%, rgba(0,0,0,0) 100%),
+      url('../img/characters/dutch-bg.webp') no-repeat center center;
+      background-attachment: fixed;
+      overflow: scroll;
+}
+
+.right-side {
+  gap: 0rem;
+  margin-left: 0rem;
+  align-items: end;
+}
+
+  main {
+      flex-direction: column;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      padding: var(--spacing-md);
+  }
+
+
+
+
+  .divisor {
+      width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+      --font-size-title: 3.5rem;
+      --font-size-subtitle: 1.2rem;
+  }
+
+  main {
+    justify-content: center;
+  }
+
+
+  .tab-content {
+    flex-direction: column-reverse;
+  }
+
+
+  header {
+      flex-direction: row;
+      gap: 1rem;
+      padding: var(--spacing-sm);
+  }
+
+  .navbar {
+      gap: 1rem;
+  }
+
+
+  .divisor {
+      margin-top: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+      --font-size-title: 2.5rem;
+      --spacing-sm: 0 0.5rem;
+  }
+
+
+
+  .right-side {
+    display: flex;
+    gap: 0rem;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .accounts-nav {
+    justify-content: center;
+  }
+
+  .logo img {
+      height: 40px;
+  }
+
+  .navbar ul, .active {
+      font-size: 16px;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .divisor-detail {
+    display: none;
+  }
+
+  header {
+    justify-content: space-between;
+  }
+
+
+  main {
+      border-left: none;
+      border-right: none;
+  }
+}

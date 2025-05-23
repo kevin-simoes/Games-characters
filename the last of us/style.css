@@ -1,0 +1,509 @@
+:root {
+    /* Cores */
+    --color-background: #000000;
+    --color-primary-text: #efffe6;
+    --color-secondary-text: #cccccc;
+    --color-accent-red: #b5ffb5;
+    --color-panel-dark: #1a1a1a;
+    --color-border-light: #ffffff20;
+  
+    /* Tamanhos */
+    --font-size-title: 8.5rem;
+    --font-size-subtitle: 1.5rem;
+    --font-size-body: 1rem;
+    --font-size-small: 0.875rem;
+  
+    /* Espaçamento */
+    --spacing-xs: 0 0.5rem;
+    --spacing-sm: 0 1rem;
+    --spacing-md: 0 2rem;
+    --spacing-lg: 0 4rem;
+  
+    /* Outros */
+    --transition-fast: 0.2s ease-in-out;
+  }
+  
+  /* Reset básico */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  @font-face {
+    font-family: 'Press Gothic';
+    src: url('../font/novo.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'D-DIN';
+    src: url('../font/p/D-DINCondensed-Bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'base';
+    src: url('../font/p/D-DINExp.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  
+  body {
+    background: 
+    linear-gradient(to left, rgba(54, 74, 39, 0.966) 40%, rgba(0,0,0,0) 100%),
+    url('../img/characters/tlou-bg.jpg') no-repeat center center;
+    background-size: cover;
+    color: var(--color-primary-text);
+    font-family: var(--font-body);
+    line-height: 1.5;
+    min-height: 100vh;
+    overflow: hidden;
+    padding: 1rem;
+  }
+  
+  
+  body.ellie {
+    background: 
+    linear-gradient(to right, rgba(102, 75, 35, 0.966) 20%, rgba(0,0,0,0) 100%),
+    url('../img/characters/tlou-bg2.jpg') no-repeat center center;
+    background-size: cover;
+  }
+  
+  body.tess {
+    background: 
+    linear-gradient(to left, rgb(0, 0, 0) 40%, rgba(0,0,0,0) 100%),
+    url('../img/characters/sadie-bg.avif') no-repeat center center;
+    background-size: cover;
+  }
+  
+  body.tommy {
+    background: 
+    linear-gradient(to right, rgb(0, 0, 0) 40%, rgba(0,0,0,0) 100%),
+    url('../img/characters/dutch-bg.webp') no-repeat center center;
+    background-size: cover;
+    color: var(--color-primary-text);
+    font-family: var(--font-body);
+    line-height: 1.5;
+    min-height: 100vh;
+    padding: 1rem;
+  }
+  
+  body.marlene {
+    background: 
+    linear-gradient(to left, rgba(66, 50, 9, 0.966) 40%, rgba(0,0,0,0) 100%),
+    url('../img/characters/tlou-bg.jpg') no-repeat center center;
+    background-size: cover;
+    color: var(--color-primary-text);
+    font-family: var(--font-body);
+    line-height: 1.5;
+    min-height: 100vh;
+    padding: 1rem;
+  }
+  
+  /* HEADER */
+  header {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+  
+  .logo img {
+    height: 30px;
+  }
+  
+  .navbar {
+    display: flex;
+    gap: var(--spacing-md);
+  }
+  
+  .navbar ul {
+    list-style: none;
+    font-family: 'Press Gothic', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: var(--color-primary-text);
+    transition: color var(--transition-fast);
+  }
+  
+  .actives {
+    list-style: none;
+    font-family: 'Chinese Rocks', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: var(--color-primary-text);
+    transition: color var(--transition-fast);
+    border-bottom: 1px solid var(--color-accent-red);
+  }
+  
+  .navbar ul:hover {
+    color: var(--color-accent-red);
+  }
+  
+  .actives:hover {
+    border-bottom: 1px solid var(--color-accent-red);
+  }
+  
+  a{
+    text-decoration: none;
+    color: var(--color-primary-text);
+  }
+
+  header h4 {
+    font-family: 'Press Gothic', sans-serif;
+    display: flex;
+    font-size: 28px;
+    font-weight: 100;
+    color: var(--color-primary-text, white);
+  }
+
+
+  header h4 span.hover:hover {
+    color: rgb(205, 230, 255);
+  }
+
+  header h4 span.hover {
+    display: none;
+    transition: color 0.3s ease;
+    cursor: pointer;
+  }
+
+  header h4:hover span.normal {
+    display: none;
+  }
+
+  header h4:hover span.hover {
+    display: inline;
+  }
+  
+  /* MAIN */
+  main {
+    display: flex;
+    align-items: center;
+    margin-left: 2.5rem;
+    margin-right: 50px;
+    justify-content: space-between;
+    padding: var(--spacing-lg);
+    border-left: 2px solid var(--color-border-light);
+    border-right: 2px solid var(--color-border-light);
+  }
+  
+  .tab-content {
+    display: none;
+    width: 100%;
+  }
+  
+  .tab-content.active {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #ellie.tab-content.active{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .description {
+    max-width: 50%;
+  }
+  
+  .description h1 {
+    font-family: 'Press Gothic', sans-serif;
+    font-size: var(--font-size-title);
+    margin-bottom: 0;
+    font-weight: 100;
+    line-height: 0.9;
+  }
+  
+  .divisor {
+    background-color: var(--color-primary-text);
+    width: 89%;
+    margin-top: 0rem;
+    padding: 3px 0;
+    margin-bottom: 2rem;
+  }
+  
+  .divisor-detail {
+    background-color: var(--color-border-light);
+    padding: 0.5px;
+  }
+  
+  .description h2 {
+    color: var(--color-primary-text);
+    font-family: 'D-DIN';
+    font-size: 35px;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 100;
+    border-bottom: 1px solid var(--color-border-light);
+    margin-bottom: 1rem;
+  }
+  
+  .description p {
+    font-family: 'base';
+    color: var(--color-secondary-text);
+  }
+  
+  /* CHARACTER IMAGE */
+  .character {
+    max-width: 46%;
+    display: flex;
+    margin-top: 1.5rem;
+    flex-direction: column;
+  }
+  
+  .character-img {
+    width: auto;
+    height: 700px;
+  }
+  
+  /* LISTA DE PERSONAGENS */
+  .character-nav {
+    margin-top: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 6rem;
+  }
+  
+  .character-nav ul {
+    list-style: none;
+    color: var(--color-primary-text);
+    font-family: 'D-DIN';
+    font-size: 16px;
+    text-align: end;
+    margin-bottom: var(--spacing-xs);
+    cursor: pointer;
+    transition: color var(--transition-fast);
+  }
+  
+  .character-nav ul:hover {
+    color: var(--color-accent-red);
+  }
+  
+  .character-link.active {
+    color: var(--color-accent-red);
+    border-bottom: 1px solid var(--color-accent-red);
+  }
+  
+  .accounts-nav {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .right-side {
+    display: flex;
+    gap: 10rem;
+    flex-direction: column;
+  }
+  
+  /*Responsivo*/
+  
+  @media (max-width: 1200px) {
+    :root {
+        --font-size-title: 6.5rem;
+        --spacing-lg: 0 3rem;
+    }
+  
+    .description h1 {
+        font-size: var(--font-size-title);
+    }
+  
+    .description h2 {
+        font-size: 28px;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    :root {
+        --font-size-title: 5rem;
+        --spacing-md: 0 1.5rem;
+        --spacing-lg: 0 2rem;
+    }
+  
+  
+  
+    .character-nav {
+        display: flex;
+        flex-direction: row;
+        margin-top: 1rem;
+    }
+  
+    body, body.ellie, body.tess, body.tommy, body.marlene {
+        overflow: scroll;
+        overflow-x: hidden;
+        flex-direction: column-reverse;
+        background-attachment: fixed;
+        background-position: top center;
+    }
+  
+    body.ellie {
+      background: 
+      linear-gradient(to right, rgba(102, 75, 35, 0.966) 20%, rgba(0,0,0,0) 100%),
+      url('../img/characters/tlou-bg2.jpg') no-repeat center center;
+            background-attachment: fixed;
+            overflow: scroll;
+    }
+  
+    body.tess {
+      background: 
+          linear-gradient(to left, rgb(0, 0, 0) 60%, rgba(0,0,0,0) 100%),
+          url('../img/characters/sadie-bg.avif') no-repeat center center;
+          background-attachment: fixed;
+          overflow: scroll;
+  }
+  
+  body.tommy {
+    background: 
+        linear-gradient(to left, rgb(0, 0, 0) 60%, rgba(0,0,0,0) 100%),
+        url('../img/characters/dutch-bg.webp') no-repeat center center;
+        background-attachment: fixed;
+        overflow: scroll;
+  }
+  
+  body.marlene {
+    background: 
+        linear-gradient(to left, rgb(0, 0, 0) 60%, rgba(0,0,0,0) 100%),
+        url('../img/characters/micah-bg.jpg') no-repeat center center;
+        background-attachment: fixed;
+        overflow: scroll;
+  }
+  
+  .right-side {
+    gap: 0rem;
+    align-items: end;
+  }
+  
+    main {
+        flex-direction: column;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        padding: var(--spacing-md);
+    }
+  
+    .description {
+        max-width: 100%;
+        margin-bottom: 2rem;
+    }
+  
+    .character {
+        max-width: 70%;
+        margin: 0 auto;
+    }
+  
+    .divisor {
+        width: 100%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    :root {
+        --font-size-title: 3.5rem;
+        --font-size-subtitle: 1.2rem;
+    }
+  
+    main {
+      justify-content: center;
+    }
+  
+    .character-img {
+      height: 400px;
+    }
+  
+    .tab-content {
+      flex-direction: column-reverse;
+    }
+  
+    .description h1 {
+      font-size: 100px;
+      text-align: center;
+    }
+  
+    header {
+        flex-direction: row;
+        gap: 1rem;
+        padding: var(--spacing-sm);
+    }
+  
+    .navbar {
+        gap: 1rem;
+    }
+  
+    .description h2 {
+        font-size: 24px;
+    }
+  
+    .divisor {
+        margin-top: 1rem;
+    }
+  
+    .character {
+        max-width: 85%;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    :root {
+        --font-size-title: 2.5rem;
+        --spacing-sm: 0 0.5rem;
+    }
+  
+    .character-img {
+      height: 350px;
+    }
+  
+    .right-side {
+      display: flex;
+      gap: 0rem;
+      align-items: center;
+      flex-direction: column;
+    }
+  
+    .accounts-nav {
+      justify-content: center;
+    }
+  
+    .character-nav {
+      margin-top: 0rem;
+    }
+  
+    .logo img {
+        height: 40px;
+    }
+  
+    .navbar ul, .active {
+        font-size: 16px;
+    }
+
+    .navbar {
+      display: none;
+    }
+
+    .divisor-detail {
+      display: none;
+    }
+
+    header {
+      justify-content: space-between;
+    }
+  
+    .description h2 {
+        font-size: 20px;
+    }
+  
+    main {
+        border-left: none;
+        border-right: none;
+    }
+  }
